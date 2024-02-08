@@ -1,0 +1,365 @@
+<!-- The <!DOCTYPE html> declaration defines that this document is an HTML5 document -->
+<!DOCTYPE html>
+<!-- The <html> element is the root element of an HTML page -->
+<!-- The lang attribute specifies the language of the element's content. -->
+<html lang="en">
+    <!-- The <head> element contains meta information about the HTML page -->
+    <head>
+        <!-- The <meta> tag defines metadata about an HTML document <meta> tags always go inside the <head> element,
+             and are typically used to specify character set, page description, keywords, author of the document, 
+             and viewport settings. 
+        -->
+        <!-- UTF-8 is a character encoding system. It lets you represent characters as ASCII text, 
+            (while still allowing for international characters, such as Chinese, Bangla etc so many characters) 
+            ASCII (American Standard Code for Information Interchange) is the most common character encoding format 
+            for text data in computers and on the internet 
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab) -->
+        <title>Penguin Fashion</title>
+        
+        <!-- ======================================================================================================== -->
+        <!-- ===== A favicon is a small (16px X 16px) image displayed next to the page title in the browser tab ===== -->
+        <!-- ======================================================================================================== -->
+        <!-- <link rel="icon" type="" href=""> -->
+        <link rel="icon" href="./favicon/fav.png">
+        
+
+        <!-- ======================================================= -->
+        <!-- ===== Bootstrap.css stylesheet reference CND link ===== -->
+        <!-- ======================================================= -->
+        
+
+        <!-- ===== 
+            ====== External JavaScript ======
+            #1 - JavaScript can be placed in the <head>, or in the <body> section, or in both.
+            #2 - In HTML, JavaScript code is inserted between <script> and </script> tags.
+            #3 - You can place any number of scripts in an HTML document.
+            #4 - To use an external script, put the name of the script file in the src (source) attribute of a <script> tag:
+        ======= -->
+        <!-- ======================================================================================== -->
+        <!-- ===== Bootstrap js styles reference link will be here Or in the bottom of body tag ===== -->
+        <!-- ======================================================================================== -->
+
+
+        <!-- ============================================================= -->
+        <!-- ===== Tailwind CSS stylesheet reference CND Script link ===== -->
+        <!-- ============================================================= -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!--  ========================================================================= 
+            This code is a Javascript structure object (theme). Inside the theme object 
+                     another object (extend) > Inside the extend object another object (colors) > 
+                     Inside the colors object all the custom object (color).
+                     & Use for customize configuration with your own color/design
+            ========================================================================== -->
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    clifford: '#da373d',
+                    price: '#FABE4C',
+                    // white: '#FFFFFF',
+                  },
+                  fontFamily : {
+                    bebas : ["Bebas Neue", "sans-serif"],
+                    roboto : ["Roboto", "sans-serif"]
+                  }
+                }
+              }
+            }
+          </script>
+
+
+
+        <!-- ========================================= -->
+        <!-- ===== CSS stylesheet reference link ===== -->
+        <!-- ========================================= -->
+        <!-- ====== (If you use Bootstrap CSS CND link & external custom CSS link then always mentioned 
+            the external custom CSS link after Or under the Bootstrap CSS CND link) ====== -->
+        <!-- <link rel="stylesheet" href="styles/style.css"> -->
+
+
+        
+        <!-- ============================== -->
+        <!-- ====== Google font link ====== -->
+        <!-- ============================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+        <!-- ============================================= -->
+        <!-- ====== Boxicons website reference link ====== -->
+        <!-- ============================================= -->
+
+
+        <!-- ================================= -->
+        <!-- ====== Google icon(s) link ====== -->
+        <!-- ================================= -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+        <!-- ============================================= -->
+        <!-- ====== Font Awesome CDN reference link ====== -->
+        <!-- ============================================= -->
+        <script src="https://kit.fontawesome.com/4aea96c79d.js" crossorigin="anonymous"></script>
+
+    </head>
+    <!-- The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc. -->
+    <body class="">
+        <!-- ===== Header Section Start ====== -->
+        <!-- class="container mx-auto" -->
+        <header class="bg-amber-50">
+            <!-- ====== Navbar Section Start ====== -->
+            <nav class="">
+                <div class="container flex justify-between items-center mx-auto pt-7 px-4 md:pt-12 md:px-14">
+                    <img class="w-48 h-7 md-w-72 md:h-10" src="icons/logo.png" alt="">
+                    <ul class="md:flex gap-10 hidden">
+                        <li>Home</li>
+                        <li>Product</li>
+                        <li>About us</li>
+                        <li>Contact Us</li>
+                    </ul>
+                    <div class="flex items-center justify-center md:hidden">
+                        <!-- Hamburger button -->
+                        <button id="hamburger-btn" class="focus:outline-none">
+                          <div class="w-7 h-1 bg-gray-600 mb-1 transition"></div>
+                          <div class="w-7 h-1 bg-gray-600 mb-1 transition"></div>
+                          <div class="w-7 h-1 bg-gray-600 transition"></div>
+                        </button>
+                      </div>
+                </div>
+            </nav>
+            <!-- ====== Navbar Section End ====== -->
+
+            <!-- ===== Banner Section Start ====== -->
+            <div class="container mx-auto md:flex justify-between items-center pb-16 pl-5 md:px-14 mt-16">
+                <div class="space-y-3 md:space-y-6 my-14">
+                    <h1 class="font-bebas text-6xl md:text-[80px] font-semibold"><span class="text-amber-400">Be the Penguins</span> <br> of Winter</h1>
+                    <p class="font-roboto w-96 pr-10 md:pr-5 pb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <!-- ====== To make custom linear gradient button color ======  -->
+                    <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                        <img class="w-6 inline me-2" src="icons/shopping-cart 1.png" alt="">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg> -->
+                        Buy Now
+                    </button>
+                </div>
+                <div class="md:mr-16">
+                    <img class="w-80 lg:w-full mx-auto" src="images/model.png" alt="">
+                </div>
+            </div>
+            <!-- ===== Banner Section End ====== -->
+            
+        </header>
+        <!-- ===== Header Section End ====== -->
+    
+        <!-- ===== Main Section Start ====== -->
+        <main class="container mx-auto">
+            <h1>Responsive Part is Completed</h1>
+
+            <!-- ===== Woman Jacket Section Start ====== -->
+            <section class="mt-40 mb-24 md:px-14">
+                <h1 class="text-4xl font-bebas text-center md:text-5xl md:text-start mb-10">Women Jacket</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    <!-- ===== Woman Jacket Cart-1 Start ====== -->
+                    <div class="w-[343px] md:w-96 rounded-3xl shadow-2xl mx-8 md:mx-0 p-6 md:p-4">
+                        <div class="bg-slate-100 h-80 md:h-2/3 mx-auto mb-4 rounded-3xl flex justify-center items-center">
+                            <img class="w-3/4 py-4" src="images/jacket-1.png" alt="">
+                        </div>
+                        <div class="font-roboto"> 
+                            <h3 class="text-2xl font-bold">Yellow Coat Jacket</h3>
+                            <p class="py-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-4xl font-bold text-price">$234</p>
+                                <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                                    <img class="w-6 inline me-2" src="icons/shopping-cart 1.png" alt="">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg> -->
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== Woman Jacket Cart-1 End ====== -->
+
+                    <!-- ===== Woman Jacket Cart-2 Start ====== -->
+                    <div class="w-[343px] md:w-96 rounded-3xl shadow-xl mx-8 md:mx-0 p-6 md:p-4">
+                        <div class="bg-slate-100 h-80 md:h-2/3 mb-4 rounded-3xl flex justify-center items-center">
+                            <img class="w-3/4 py-4" src="images/jacket-2.png" alt="">
+                        </div>
+                        <div class="font-roboto"> 
+                            <h3 class="text-2xl font-bold">Ladies Jacket</h3>
+                            <p class="py-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-4xl font-bold text-price">$234</p>
+                                <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                                    <img class="w-6 inline me-2" src="icons/shopping-cart 1.png" alt="">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg> -->
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== Woman Jacket Cart-2 End ====== -->
+
+                    <!-- ===== Woman Jacket Cart-3 Start ====== -->
+                    <div class="w-[343px] md:w-96 rounded-3xl shadow-2xl mx-8 md:mx-0 p-6 md:p-4">
+                        <div class="bg-slate-100 h-80 md:h-2/3 mb-4 rounded-3xl flex justify-center items-center">
+                            <img class="w-3/4 py-4" src="images/jacket-3.png" alt="">
+                        </div>
+                        <div class="font-roboto"> 
+                            <h3 class="text-2xl font-bold">Woman Leather Jacket</h3>
+                            <p class="py-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-4xl font-bold text-price">$234</p>
+                                <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                                    <img class="w-6 inline me-2" src="icons/shopping-cart 1.png" alt="">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg> -->
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== Woman Jacket Cart-3 End ====== -->
+                </div>
+            </section>
+            <!-- ===== Woman Jacket Section End ====== -->
+            
+            <!-- ===== Man Jacket Section Start ====== -->
+            <section class="mt-40 md:px-14">
+                <h1 class="text-4xl font-bebas text-center md:text-5xl md:text-start mb-10">Man Jacket</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- ===== Man Jacket Cart-1 Start ====== -->
+                    <div class="w-[343px] md:w-96 shadow-2xl rounded-3xl mx-8 md:mx-0 p-6 md:p-4">
+                        <div class="bg-slate-100 rounded-3xl h-80 md:h-2/3 mb-4 flex justify-center items-center">
+                            <img class="w-3/4 py-10" src="images/jacket-4.png" alt="">
+                        </div>
+                        <div class="font-roboto">
+                            <h3 class="text-2xl font-bold ">Snowboard Jacket Mens</h3>
+                            <p class="py-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-4xl font-bold text-price">$234</p>
+                                <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                                    <img class="w-6 inline mr-2" src="icons/shopping-cart 1.png" alt="">
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== Man Jacket Cart-1 End ====== -->
+
+                    <!-- ===== Man Jacket Cart-2 Start ====== -->
+                    <div class="w-[343px] md:w-96 rounded-3xl shadow-2xl mx-8 md:mx-0 p-6 md:p-4">
+                        <div class="bg-slate-100 h-80 md:h-2/3 mb-4 rounded-3xl flex justify-center items-center">
+                            <img class="w-3/4 py-10" src="images/jacket-5.png" alt="">
+                        </div>
+                        <div class="font-roboto"> 
+                            <h3 class="text-2xl font-bold">Man Leather Jackets</h3>
+                            <p class="py-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-4xl font-bold text-price">$234</p>
+                                <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                                    <img class="w-6 inline me-2" src="icons/shopping-cart 1.png" alt="">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg> -->
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== Man Jacket Cart-2 End ====== -->
+
+                    <!-- ===== Man Jacket Cart-3 Start ====== -->
+                    <div class="w-[343px] md:w-96 rounded-3xl shadow-2xl mx-8 md:mx-0 p-6 md:p-4">
+                        <div class="bg-slate-100 h-80 md:h-2/3 mb-4 rounded-3xl flex justify-center items-center">
+                            <img class="w-3/4 py-10" src="images/jacket-6.png" alt="">
+                        </div>
+                        <div class="font-roboto"> 
+                            <h3 class="text-2xl font-bold">Man Casual Jackets</h3>
+                            <p class="py-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="flex justify-between items-center">
+                                <p class="text-4xl font-bold text-price">$234</p>
+                                <button class="uppercase text-white bg-gradient-to-b from-[#A4BC46] to-[#85A019] py-4 px-8 rounded-lg">
+                                    <img class="w-6 inline me-2" src="icons/shopping-cart 1.png" alt="">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg> -->
+                                    Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== Man Jacket Cart-3 End ====== -->
+                </div>
+            </section>
+            <!-- ===== Man Jacket Section End ====== -->
+
+            <!-- ===== Customer Service Section Start ====== -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32 md:px-14 mb-52">
+                <div class="order-2 md:order-1 mx-8 md:mx-0 h-36 flex p-6 shadow-2xl rounded-3xl">
+                    <img class="w-20 h-20" src="icons/house.png" alt="">
+                    <div class="font-roboto ml-9">
+                        <h6 class="text-2xl font-bold pb-4">Find the Perfect Fit</h6>
+                        <p class="break-words">Everybody is different, which is why we offer styles for every body.</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 mx-8 md:mx-0 row-span-3 md:flex items-center md:ml-20">
+                    <img class="" src="images/shopping.png" alt="">
+                </div>
+                <div class="order-3 md:order-3 mx-8 md:mx-0 h-36 flex p-6 shadow-2xl rounded-3xl">
+                    <img class="w-20 h-20" src="icons/box.png" alt="">
+                    <div class="font-roboto ml-9">
+                        <h6 class="text-2xl font-bold pb-4">Free Exchanges</h6>
+                        <p class="break-words">One of the many reasons you can shop with peace of mind.</p>
+                    </div>
+                </div>
+                <div class="order-4 md:order-4 mx-8 md:mx-0 h-36 flex p-6 shadow-2xl rounded-3xl">
+                    <img class="w-20 h-20" src="icons/question.png" alt="">
+                    <div class="font-roboto ml-9">
+                        <h6 class="text-2xl font-bold pb-4">Contact Our Seller</h6>
+                        <p class="break-words">They are here to help you. That's quite literally what we pay them for.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== Customer Service Section End ====== -->
+            
+
+            <!-- ===== Frequently Asked Questions Section Start ====== -->
+            <!-- ===== Frequently Asked Questions Section End ====== -->
+
+        </main>
+        <!-- ===== Main Section End ====== -->
+
+        <!-- ===== Footer Section Start ====== -->
+        <footer></footer>
+        <!-- ===== Footer Section End ====== -->
+        
+
+
+
+
+        <!-- ===== 
+            ===== External JavaScript =====
+            #1 - JavaScript can be placed in the <head>, or in the <body> section, or in both.
+            #2 - In HTML, JavaScript code is inserted between <script> and </script> tags.
+            #3 - You can place any number of scripts in an HTML document.
+            #4 - To use an external script, put the name of the script file in the src (source) attribute of a <script> tag:
+        ===== -->
+        <!-- ===== Bootstrap.js styles reference link =====  -->
+        <!-- <script src="styles/bootstrap-js/bootstrap.bundle.js"></script> -->
+
+    </body>
+</html>
